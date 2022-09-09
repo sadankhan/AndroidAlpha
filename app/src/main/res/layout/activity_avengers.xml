@@ -89,51 +89,6 @@
                 android:layout_height="match_parent">
 
             <ImageView
-                    android:id="@+id/imgSteveRogers"
-                    android:layout_width="120dp"
-                    android:layout_height="120dp"
-                    android:src="@drawable/captain_america"
-                    android:layout_margin="20dp"/>
-
-            <TextView
-                    android:id="@+id/txtName2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Captain Steve Rogers"
-                    android:layout_toRightOf="@id/imgSteveRogers"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:textColor="#000000"
-                    android:layout_marginTop="20dp"/>
-
-            <TextView
-                    android:id="@+id/txtEmail2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="steve@avengers.com"
-                    android:layout_toRightOf="@id/imgSteveRogers"
-                    android:textSize="18sp"
-                    android:layout_below="@id/txtName2"
-                    android:textColor="#000000"
-                    android:layout_marginTop="15dp"/>
-
-            <TextView
-                    android:id="@+id/txtPhone2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="+91 9876543210"
-                    android:layout_toRightOf="@id/imgSteveRogers"
-                    android:textSize="18sp"
-                    android:layout_below="@id/txtEmail2"
-                    android:textColor="#000000"
-                    android:layout_marginTop="15dp"/>
-        </RelativeLayout>
-
-        <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-            <ImageView
                     android:id="@+id/imgThor"
                     android:layout_width="120dp"
                     android:layout_height="120dp"
@@ -172,6 +127,51 @@
                     android:layout_below="@id/txtEmail3"
                     android:textColor="#000000"
                     android:layout_marginTop="15dp"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/imgSteveRogers"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_margin="20dp"
+                    android:src="@drawable/captain_america" />
+
+                <TextView
+                    android:id="@+id/txtName2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_toRightOf="@id/imgSteveRogers"
+                    android:text="Captain Steve Rogers"
+                    android:textColor="#000000"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtEmail2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txtName2"
+                    android:layout_marginTop="15dp"
+                    android:layout_toRightOf="@id/imgSteveRogers"
+                    android:text="steve@avengers.com"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/txtPhone2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txtEmail2"
+                    android:layout_marginTop="15dp"
+                    android:layout_toRightOf="@id/imgSteveRogers"
+                    android:text="+91 9876543210"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+            </RelativeLayout>
         </RelativeLayout>
 
         <RelativeLayout
