@@ -2,6 +2,7 @@
 
     <string name="app_name">Activity Lifecycle</string>
     <string name="new_app_name">Avengers</string>
+    <string name="new_app_name2">Scroll View</string>
     <string name="enter_password">Enter Password</string>
     <string name="enter_mobile_number">Enter Mobile Number</string>
     <string name="log_in">Log In</string>
