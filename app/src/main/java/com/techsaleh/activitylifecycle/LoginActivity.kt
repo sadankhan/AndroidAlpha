@@ -20,7 +20,7 @@ class LoginActivity : AppCompatActivity() {
     lateinit var txtForgotPassword: TextView
     lateinit var txtRegisterYourself: TextView
     val validMobileNumber = "9876543210"
-    private val validPassword = arrayOf("tony", "steve", "bruce", "thanos")
+    private val validPassword = arrayOf("tony", "steve", "bruce", "thor", "thanos")
 
     lateinit var sharedPreferences: SharedPreferences
 
@@ -88,6 +88,15 @@ class LoginActivity : AppCompatActivity() {
 
                     }
                     validPassword[3] -> {
+
+                        nameOfAvenger = "Mighty Thor"
+
+                        savePreferences(nameOfAvenger)
+
+                        startActivity(intent)
+
+                    }
+                    validPassword[4] -> {
 
                         nameOfAvenger = "The Avengers"
 
