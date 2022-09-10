@@ -20,7 +20,7 @@ class LoginActivity : AppCompatActivity() {
     lateinit var txtForgotPassword: TextView
     lateinit var txtRegisterYourself: TextView
     val validMobileNumber = "9876543210"
-    val validPassword = arrayOf("tony", "steve", "bruce", "thanos")
+    private val validPassword = arrayOf("tony", "steve", "bruce", "thanos")
 
     lateinit var sharedPreferences: SharedPreferences
 
@@ -119,6 +119,7 @@ class LoginActivity : AppCompatActivity() {
 
     }
 
+    /* When user clicks back button this activity need to be finished. */
     override fun onPause() {
         super.onPause()
         finish()

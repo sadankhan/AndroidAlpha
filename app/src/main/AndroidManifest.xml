@@ -15,23 +15,15 @@
         </activity>
         <activity android:name="com.techsaleh.activitylifecycle.MessageActivity">
         </activity>
-        <activity android:name="com.techsaleh.activitylifecycle.LoginActivity">
-            <!--<intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>-->
-        </activity>
-        <activity android:name="com.techsaleh.activitylifecycle.AvengersActivity">
-        </activity>
-        <activity android:name=".MainActivity"
+        <activity android:name="com.techsaleh.activitylifecycle.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
-
+        </activity>
+        <activity android:name="com.techsaleh.activitylifecycle.AvengersActivity">
         </activity>
     </application>
 
