@@ -2,13 +2,32 @@ package com.techsaleh.activitylifecycle
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
+import android.widget.Toast
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), View.OnClickListener {
+
+    lateinit var etMobileNumber: EditText
+    lateinit var etPassword: EditText
+    lateinit var btnLogin: Button
+    lateinit var txtForgotPassword: TextView
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.scrollview_example)
+        setContentView(R.layout.activity_login)
 
-        title = "The Scroll View"
+        title = "Log In"
+
+        etMobileNumber = findViewById(R.id.etMobileNumber)
+        etPassword = findViewById(R.id.etPassword)
+        btnLogin = findViewById(R.id.btnLogin)
+        txtForgotPassword = findViewById(R.id.txtForgotPassword)
+
+        btnLogin.setOnClickListener(this)
     }
 
     override fun onStart() {
@@ -39,5 +58,9 @@ class MainActivity : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
         println("On Destroy is Called")
+    }
+
+    override fun onClick(p0: View?) {
+        Toast.makeText(this@MainActivity, "Login Clicked", Toast.LENGTH_LONG).show()
     }
 }
