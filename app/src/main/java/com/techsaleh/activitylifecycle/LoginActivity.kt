@@ -11,7 +11,7 @@ import android.widget.TextView
 import android.widget.Toast
 
 class LoginActivity : AppCompatActivity() {
-    /*An activity is a screen on your devices, which consist of the user interface. */
+    /* An activity is a screen on your devices, which consist of the user interface. */
     /* An activity provides the window in which the app draws its UI */
 
     lateinit var etMobileNumber: EditText
