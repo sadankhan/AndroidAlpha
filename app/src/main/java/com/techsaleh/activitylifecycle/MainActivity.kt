@@ -8,12 +8,12 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 
-class MainActivity : AppCompatActivity(), View.OnClickListener {
+class MainActivity : AppCompatActivity(){
 
-    lateinit var etMobileNumber: EditText
-    lateinit var etPassword: EditText
-    lateinit var btnLogin: Button
-    lateinit var txtForgotPassword: TextView
+    private lateinit var etMobileNumber: EditText
+    private lateinit var etPassword: EditText
+    private lateinit var btnLogin: Button
+    private lateinit var txtForgotPassword: TextView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,7 +27,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         btnLogin = findViewById(R.id.btnLogin)
         txtForgotPassword = findViewById(R.id.txtForgotPassword)
 
-        btnLogin.setOnClickListener(this)
+        btnLogin.setOnClickListener{
+            Toast.makeText(this@MainActivity, "Login Clicked",
+                Toast.LENGTH_SHORT).show()
+        }
     }
 
     override fun onStart() {
@@ -58,9 +61,5 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     override fun onDestroy() {
         super.onDestroy()
         println("On Destroy is Called")
-    }
-
-    override fun onClick(p0: View?) {
-        Toast.makeText(this@MainActivity, "Login Clicked", Toast.LENGTH_LONG).show()
     }
 }
