@@ -1,5 +1,6 @@
 package com.techsaleh.activitylifecycle
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -31,6 +32,9 @@ class MainActivity : AppCompatActivity(){
             Toast.makeText(this@MainActivity, "Login Clicked",
                 Toast.LENGTH_SHORT).show()
         }
+
+        val intent = Intent(this@MainActivity, AvengersActivity::class.java)
+        startActivity(intent)
     }
 
     override fun onStart() {
