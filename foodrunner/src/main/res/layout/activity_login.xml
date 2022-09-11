@@ -27,10 +27,11 @@
         android:inputType="number"
         android:background="@drawable/text_boundary_background"
         android:maxLength="10"
-        android:drawableLeft="@drawable/ic_action_phone"
+        android:drawableStart="@drawable/ic_action_phone"
         android:drawablePadding="3dp"
         android:maxLines="1"
-        android:padding="10dp"/>
+        android:padding="10dp"
+        android:autofillHints="password" />
 
     <EditText
         android:id="@+id/etPassword"
@@ -44,9 +45,10 @@
         android:maxLength="6"
         android:background="@drawable/text_boundary_background"
         android:maxLines="1"
-        android:drawableLeft="@drawable/ic_action_password"
+        android:drawableStart="@drawable/ic_action_password"
         android:drawablePadding="3dp"
-        android:padding="10dp"/>
+        android:padding="10dp"
+        android:autofillHints="password" />
 
     <Button
         android:id="@+id/btnLogin"
@@ -93,6 +95,5 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@android:color/white"
             android:layout_marginBottom="10dp"/>
-
     </RelativeLayout>
 </LinearLayout>
