@@ -18,13 +18,13 @@ import com.techsaleh.bookhub.fragment.ProfileFragment
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var drawerLayout: DrawerLayout
-    lateinit var coordinatorLayout: CoordinatorLayout
-    lateinit var toolbar: Toolbar
-    lateinit var frameLayout: FrameLayout
-    lateinit var navigationView: NavigationView
+    private lateinit var drawerLayout: DrawerLayout
+    private lateinit var coordinatorLayout: CoordinatorLayout
+    private lateinit var toolbar: Toolbar
+    private lateinit var frameLayout: FrameLayout
+    private lateinit var navigationView: NavigationView
 
-    var previousMenuItem: MenuItem? = null
+    private var previousMenuItem: MenuItem? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -104,7 +104,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun setUpToolbar() {
+    private fun setUpToolbar() {
         setSupportActionBar(toolbar)
         supportActionBar?.title = "Toolbar Title"
         supportActionBar?.setHomeButtonEnabled(true)
@@ -123,7 +123,7 @@ class MainActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
-    fun openDashboard(){
+    private fun openDashboard(){
         val fragment = DashboardFragment()
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.frame, fragment)
