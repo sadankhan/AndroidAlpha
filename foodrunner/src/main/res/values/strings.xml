@@ -20,4 +20,6 @@
     <string name="enter_mobile_forgot_password">Enter your registered mobile number and email below:</string>
     <string name="next">Next</string>
     <string name="food_runner">Food Runner</string>
+    <!--Saving the preferences-->
+    <string name="preference_file_name">Avengers Preferences</string>
 </resources>
