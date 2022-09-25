@@ -18,6 +18,5 @@ class MessageActivity : AppCompatActivity() {
             message = intent.getStringExtra("Message")
             txtMessage.text = message
         }
-
     }
 }

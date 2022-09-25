@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activity.ValidationActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rlRegister"
+        android:background="@color/purple_200">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar"/>
+
+        <ImageView
+            android:id="@+id/imgAppLogo"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="80dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/app_logo_500"/>
+
+        <EditText
+            android:id="@+id/etOTP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/text_boundary_background"
+            android:layout_below="@+id/imgAppLogo"
+            android:layout_marginLeft="12dip"
+            android:layout_marginTop="25dip"
+            android:layout_marginRight="12dip"
+            android:hint="@string/enter_otp"
+            android:inputType="numberPassword"
+            android:autofillHints="numberPassword"
+            android:padding="10dip"
+            android:singleLine="true"
+            android:maxLength="3"
+            android:drawableStart="@drawable/ic_action_password"
+            android:drawablePadding="3dp"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"/>
+
+        <EditText
+            android:id="@+id/etPassword"
+            android:layout_width="match_parent"
+            android:background="@drawable/text_boundary_background"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/etOTP"
+            android:layout_marginLeft="12dip"
+            android:layout_marginTop="20dip"
+            android:layout_marginRight="12dip"
+            android:hint="@string/cnp"
+            android:inputType="textPassword"
+            android:padding="10dip"
+            android:maxLength="8"
+            android:autofillHints="textPassword"
+            android:drawableStart="@drawable/ic_action_security"
+            android:drawablePadding="3dp"
+            android:singleLine="true"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"/>
+
+        <EditText
+            android:id="@+id/etConfirmPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/text_boundary_background"
+            android:layout_below="@+id/etPassword"
+            android:layout_marginLeft="12dip"
+            android:layout_marginTop="6dip"
+            android:layout_marginRight="12dip"
+            android:hint="@string/confirm_password"
+            android:inputType="textPassword"
+            android:autofillHints="textPassword"
+            android:padding="10dip"
+            android:singleLine="true"
+            android:maxLength="8"
+            android:drawableStart="@drawable/ic_action_security"
+            android:drawablePadding="3dp"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"/>
+
+        <Button
+            android:id="@+id/btnReset"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/etConfirmPassword"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="12dip"
+            android:layout_marginTop="40dip"
+            android:layout_marginRight="12dip"
+            android:background="@drawable/button_boundary_background"
+            android:backgroundTint="@color/color_logo"
+            android:text="@string/reset_password"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@android:color/white"/>
+    </RelativeLayout>
+</ScrollView>

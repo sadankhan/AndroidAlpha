@@ -125,6 +125,7 @@ class LoginActivity : AppCompatActivity() {
             val intent = Intent(this@LoginActivity, RegisterActivity::class.java)
             startActivity(intent)
         }
+        println("OnCreate Activity")
 
     }
 
@@ -132,10 +133,33 @@ class LoginActivity : AppCompatActivity() {
     override fun onPause() {
         super.onPause()
         finish()
+        println("On Pause Activity")
     }
 
     fun savePreferences(title: String) {
         sharedPreferences.edit().putBoolean("isLoggedIn", true).apply()
         sharedPreferences.edit().putString("title", title).apply()
     }
+
+    override fun onStart() {
+        super.onStart()
+        println("OnStart Activity")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        println("OnResume Activity")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        println("On Destroy")
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        println("On Restart Activity")
+    }
+
+
 }

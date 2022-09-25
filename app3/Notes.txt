@@ -1,0 +1,7 @@
+There is a bridge for OTP which will be taken from Reset Password to Login.
+
+Receiving data from one activity to another while working, notification.
+When activity moves to another activity using intent which life cycle is called.
+LCM of Activity on back pressed.
+Toolbar vs Actionbar
+    toolbar can be placed anywher!
