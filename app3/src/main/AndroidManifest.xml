@@ -10,6 +10,7 @@
         android:theme="@style/Theme.AndroidAlpha">
         <activity
             android:name=".activity.LoginActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

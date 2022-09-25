@@ -1,10 +1,8 @@
 <resources>
-    <string name="app_name">Happy Food</string>
-    <string name="happy_food">Happy Food</string>
-    <string name="img_logo_description">logo</string>
+    <string name="app_name">Android Kick-Off</string>
     <string name="mobile_number">Mobile Number (10 digits)</string>
     <string name="password">Password</string>
-    <string name="login">Log In</string>
+    <string name="login">Login</string>
     <string name="enter_name">Name (Min. 3 characters)</string>
     <string name="address">Delivery Address</string>
     <string name="choose_password">Password (Min. 4 characters)</string>
