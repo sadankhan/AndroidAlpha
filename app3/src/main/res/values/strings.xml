@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Happy Food</string>
+    <string name="happy_food">Happy Food</string>
+    <string name="img_logo_description">logo</string>
 </resources>
