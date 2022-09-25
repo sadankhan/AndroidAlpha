@@ -27,7 +27,7 @@ class LoginActivity : AppCompatActivity() {
         /*Linking the view*/
         setContentView(R.layout.activity_login)
 
-        /*Implementing SharedPrefrences*/
+        /*Implementing Shared Preferences*/
         sharedPreferences = getSharedPreferences(getString(R.string.preference_file_name), Context.MODE_PRIVATE)
 
         val isLoggedIn = sharedPreferences.getBoolean("isLoggedIn", false)
@@ -57,7 +57,7 @@ class LoginActivity : AppCompatActivity() {
         login.setOnClickListener {
 
             /*Declaring Value*/
-            var s = "Dashboard"
+            val s = "Dashboard"
             savePreferences(s)
 
             /*Declaring the intent which sets up the route for the navigation of the activity*/

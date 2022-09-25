@@ -1,8 +1,3 @@
-include ':proexp'
-include ':notesaz'
-include ':ums'
-include ':app3'
 include ':app2'
 include ':app'
 include ':foodrunner'
-include ':foodrunnery'

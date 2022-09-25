@@ -9,9 +9,9 @@ import com.intern.foodrunner.R
 
 class ForgotPasswordActivity : AppCompatActivity() {
     /*Declaring the different variables used for this activity*/
-    lateinit var etForgotMobile: EditText
-    lateinit var etForgotEmail: EditText
-    lateinit var btnForgotNext: Button
+    private lateinit var etForgotMobile: EditText
+    private lateinit var etForgotEmail: EditText
+    private lateinit var btnForgotNext: Button
 
     /*Life-cycle method of the activity*/
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -12,12 +12,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/app2" />
-            <option value="$PROJECT_DIR$/app3" />
             <option value="$PROJECT_DIR$/foodrunner" />
-            <option value="$PROJECT_DIR$/foodrunnery" />
-            <option value="$PROJECT_DIR$/notesaz" />
-            <option value="$PROJECT_DIR$/proexp" />
-            <option value="$PROJECT_DIR$/ums" />
           </set>
         </option>
       </GradleProjectSettings>

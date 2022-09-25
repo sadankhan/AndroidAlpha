@@ -7,7 +7,7 @@ import com.intern.foodrunner.R
 
 class DashboardActivity : AppCompatActivity() {
     /*Declaring the textview used for displaying the data*/
-    lateinit var txtData: TextView
+    private lateinit var txtData: TextView
 
     /*Life-cycle method*/
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,23 +29,23 @@ class DashboardActivity : AppCompatActivity() {
             /*Checking the location from which data was sent*/
             if (data == "login") {
                 /*Creating the text to be displayed*/
-                val text = "Mobile Number : ${details?.getString("mobile")} \n " +
-                        "Password : ${details?.getString("password")}"
+                val text = "Mobile Number : ${details.getString("mobile")} \n " +
+                        "Password : ${details.getString("password")}"
                 txtData.text = text
             }
 
             if (data == "register") {
-                val text = " Name : ${details?.getString("name")} \n " +
-                        "Email Address: ${details?.getString("email")} \n " +
-                        "Mobile Number : ${details?.getString("mobile")} \n " +
-                        "Password : ${details?.getString("password")} \n " +
+                val text = " Name : ${details.getString("name")} \n " +
+                        "Email Address: ${details.getString("email")} \n " +
+                        "Mobile Number : ${details.getString("mobile")} \n " +
+                        "Password : ${details.getString("password")} \n " +
                         "Address: ${details?.getString("address")}"
                 txtData.text = text
             }
 
             if (data == "forgot") {
-                val text = "Mobile Number : ${details?.getString("mobile")} \n " +
-                        "Email : ${details?.getString("email")}"
+                val text = "Mobile Number : ${details.getString("mobile")} \n " +
+                        "Email : ${details.getString("email")}"
                 txtData.text = text
             }
 
