@@ -15,6 +15,7 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
 import com.intern.happyfood.R
+import com.intern.happyfood.fragment.HomeFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -56,7 +57,10 @@ class MainActivity : AppCompatActivity() {
 
             when(it.itemId) {
                 R.id.home -> {
-                    Toast.makeText(this@MainActivity, "Home is clicked", Toast.LENGTH_SHORT).show()
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.frame, HomeFragment())
+                        .commit()
+                    drawerLayout.closeDrawers()
                 }
                 R.id.profile -> {
                     Toast.makeText(this@MainActivity, "Profile is clicked", Toast.LENGTH_SHORT).show()

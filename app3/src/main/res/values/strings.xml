@@ -21,7 +21,6 @@
     <string name="email">Email Address</string>
     <string name="enter_mobile_forgot_password">Enter your registered mobile number and email below:</string>
     <string name="next">Next</string>
-    <string name="food_runner">Food Runner</string>
     <string name="reset_password">Reset Password</string>
     <string name="enter_otp">Enter OTP</string>
     <string name="cnp">Choose New Password</string>
@@ -30,7 +29,6 @@
     <string name="home">Home</string>
     <string name="user_profile">User Profile</string>
     <string name="favourite_restaurants">Favourite Restaurants</string>
-    <string name="order_historyc">Order Historyc</string>
     <string name="order_history">Order History</string>
     <string name="faqs">FAQs</string>
     <string name="logout">Log Out</string>
@@ -38,5 +36,8 @@
     <string name="preference_file_name">Happy Food Preferences</string>
     <string name="open_drawer">Open Drawer</string>
     <string name="close_drawer">Close Drawer</string>
-    <string name="navigation_drawer">Food Runner</string>
+    <string name="navigation_drawer">Happy Runner</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home_fragment">Home Fragment</string>
 </resources>
