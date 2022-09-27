@@ -7,7 +7,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.FrameLayout
-import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.widget.Toolbar
 import androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -29,7 +28,7 @@ class MainActivity : AppCompatActivity() {
 
     private var previousMenuItem: MenuItem? = null
 
-    /*Life-cycle method*/
+    /*Life-cycle Method*/
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -44,6 +43,8 @@ class MainActivity : AppCompatActivity() {
 
         sharedPreferences = getSharedPreferences(getString(R.string.preference_file_name), Context.MODE_PRIVATE)
 
+        openHome()
+
         val actionBarDrawerToggle = ActionBarDrawerToggle(
             this@MainActivity,
             drawerLayout,
@@ -55,35 +56,45 @@ class MainActivity : AppCompatActivity() {
 
         navigationView.setNavigationItemSelectedListener {
 
+            if (previousMenuItem != null){
+                previousMenuItem?.isChecked = false
+            }
+
+            it.isCheckable = true
+            it.isChecked = true
+            previousMenuItem = it
+
             when(it.itemId) {
                 R.id.home -> {
-                    supportFragmentManager.beginTransaction()
-                        .replace(R.id.frame, HomeFragment())
-                        .commit()
+                    openHome()
                     drawerLayout.closeDrawers()
                 }
                 R.id.profile -> {
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.frame, UserProfileFragment())
                         .commit()
+                    supportActionBar?.title = "User Profile"
                     drawerLayout.closeDrawers()
                 }
                 R.id.favourites -> {
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.frame, FavResFragment())
                         .commit()
+                    supportActionBar?.title = "Favourite Restaurants"
                     drawerLayout.closeDrawers()
                 }
                 R.id.history -> {
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.frame, OrderHistoryFragment())
                         .commit()
+                    supportActionBar?.title = "Order History"
                     drawerLayout.closeDrawers()
                 }
                 R.id.faqs -> {
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.frame, FAQsFragment())
                         .commit()
+                    supportActionBar?.title = "FAQs"
                     drawerLayout.closeDrawers()
                 }
                 R.id.logout -> {
@@ -97,11 +108,9 @@ class MainActivity : AppCompatActivity() {
     }
    private fun setUpToolbar() {
         setSupportActionBar(toolbar)
-        supportActionBar?.title = "Toolbar Title"
         supportActionBar?.setHomeButtonEnabled(true)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-    }
-
+   }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
         val id = item.itemId
@@ -110,5 +119,22 @@ class MainActivity : AppCompatActivity() {
             drawerLayout.openDrawer(GravityCompat.START)
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    private fun openHome() {
+        val fragment = HomeFragment()
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.frame, fragment)
+        transaction.commit()
+        supportActionBar?.title = "Home"
+        navigationView.setCheckedItem(R.id.home)
+    }
+
+    override fun onBackPressed() {
+
+        when(supportFragmentManager.findFragmentById(R.id.frame)) {
+            !is HomeFragment -> openHome()
+            else -> super.onBackPressed()
+        }
     }
 }
