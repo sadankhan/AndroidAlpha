@@ -1,11 +1,13 @@
 package com.intern.happyfood.activity
 
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.FrameLayout
+import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.widget.Toolbar
 import androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -22,6 +24,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var frameLayout: FrameLayout
     private lateinit var navigationView: NavigationView
 
+    private lateinit var sharedPreferences: SharedPreferences
+
     private var previousMenuItem: MenuItem? = null
 
     /*Life-cycle method*/
@@ -37,6 +41,7 @@ class MainActivity : AppCompatActivity() {
         setUpToolbar()
         //OpenHome
 
+        sharedPreferences = getSharedPreferences(getString(R.string.preference_file_name), Context.MODE_PRIVATE)
 
         val actionBarDrawerToggle = ActionBarDrawerToggle(
             this@MainActivity,
@@ -46,6 +51,30 @@ class MainActivity : AppCompatActivity() {
         )
         drawerLayout.addDrawerListener(actionBarDrawerToggle)
         actionBarDrawerToggle.syncState()
+
+        navigationView.setNavigationItemSelectedListener {
+
+            when(it.itemId) {
+                R.id.home -> {
+                    Toast.makeText(this@MainActivity, "Home is clicked", Toast.LENGTH_SHORT).show()
+                }
+                R.id.profile -> {
+                    Toast.makeText(this@MainActivity, "Profile is clicked", Toast.LENGTH_SHORT).show()
+                }
+                R.id.favourites -> {
+                    Toast.makeText(this@MainActivity, "Fav Res is clicked", Toast.LENGTH_SHORT).show()
+                }
+                R.id.history -> {
+                    Toast.makeText(this@MainActivity, "Order History is clicked", Toast.LENGTH_SHORT).show()
+                }
+                R.id.logout -> {
+                    startActivity(Intent(this@MainActivity, LoginActivity::class.java))
+                    sharedPreferences.edit().clear().apply()
+                    finish()
+                }
+            }
+            return@setNavigationItemSelectedListener true
+        }
     }
    private fun setUpToolbar() {
         setSupportActionBar(toolbar)
