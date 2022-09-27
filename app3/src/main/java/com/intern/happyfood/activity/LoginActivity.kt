@@ -1,6 +1,8 @@
 package com.intern.happyfood.activity
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -16,13 +18,23 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var etMobileNumber: EditText
     private lateinit var etPassword: EditText
     private lateinit var txtForgotPassword: TextView
+    lateinit var sharedPreferences: SharedPreferences
 
     /*Life-cycle method of the activity*/
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        sharedPreferences = getSharedPreferences(getString(R.string.preference_file_name), Context.MODE_PRIVATE)
+
+        val isLoggedIn = sharedPreferences.getBoolean("isLoggedIn", false)
         /*Linking the view*/
         setContentView(R.layout.activity_login)
+
+        if (isLoggedIn) {
+            val intent = Intent(this@LoginActivity, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
 
 
         /*Initialising the views with the ones defined in the XML*/
@@ -51,6 +63,9 @@ class LoginActivity : AppCompatActivity() {
             * We specifically used Bundle just to demonstrate a new technique*/
             val bundle = Bundle()
 
+            /* Save Login*/
+            savePreferences()
+
             /*Setting a value data which is activity specific. This will be used to identify from where the data was sent*/
             bundle.putString("data", "login")
 
@@ -64,5 +79,8 @@ class LoginActivity : AppCompatActivity() {
             /*Starting the new activity by sending the intent in the startActivity method*/
             startActivity(intent)
         }
+    }
+    fun savePreferences() {
+        sharedPreferences.edit().putBoolean("isLoggedIn", true).apply()
     }
 }
