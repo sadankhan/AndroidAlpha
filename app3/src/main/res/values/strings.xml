@@ -42,4 +42,6 @@
     <string name="home_fragment">Home Fragment</string>
     <string name="order_history_fragment">Order History Fragment</string>
     <string name="favourite_restaurant_fragment">Favourite Restaurant Fragment</string>
+    <string name="faqs_fragment">FAQs Fragment</string>
+    <string name="frequently_asked_questions">Frequently Asked Questions</string>
 </resources>

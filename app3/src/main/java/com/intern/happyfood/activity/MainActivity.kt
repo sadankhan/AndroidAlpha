@@ -80,6 +80,12 @@ class MainActivity : AppCompatActivity() {
                         .commit()
                     drawerLayout.closeDrawers()
                 }
+                R.id.faqs -> {
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.frame, FAQsFragment())
+                        .commit()
+                    drawerLayout.closeDrawers()
+                }
                 R.id.logout -> {
                     startActivity(Intent(this@MainActivity, LoginActivity::class.java))
                     sharedPreferences.edit().clear().apply()
