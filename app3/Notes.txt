@@ -4,4 +4,13 @@ Receiving data from one activity to another while working, notification.
 When activity moves to another activity using intent which life cycle is called.
 LCM of Activity on back pressed.
 Toolbar vs Actionbar
-    toolbar can be placed anywher!
+    toolbar can be placed anywhere!
+
+Response - http://13.235.250.119/v2/restaurants/fetch_result/>
+{
+    "id": "1",
+    "name": "Pind Tadka",
+    "rating": "4.1",
+    "cost_for_one": "280",
+    "image_url": "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+}
