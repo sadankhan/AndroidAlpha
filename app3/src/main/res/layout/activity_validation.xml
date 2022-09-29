@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:fillViewport="true"
     android:orientation="vertical"
     xmlns:tools="http://schemas.android.com/tools"
@@ -93,11 +93,11 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/etConfirmPassword"
             android:layout_centerHorizontal="true"
+            app:backgroundTint="@null"
             android:layout_marginLeft="12dip"
             android:layout_marginTop="40dip"
             android:layout_marginRight="12dip"
             android:background="@drawable/button_boundary_background"
-            android:backgroundTint="@color/color_logo"
             android:text="@string/reset_password"
             android:textAllCaps="false"
             android:textStyle="bold"

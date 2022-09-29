@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
+
     tools:context=".activity.LoginActivity"
     android:background="@color/purple_200">
 
@@ -25,6 +26,7 @@
         android:layout_marginTop="20dp"
         android:hint="@string/mobile_number"
         android:inputType="number"
+        app:backgroundTint="@null"
         android:background="@drawable/text_boundary_background"
         android:maxLength="10"
         android:drawableStart="@drawable/ic_action_phone"
@@ -57,7 +59,7 @@
         android:layout_marginTop="25dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:backgroundTint="@color/color_logo"
+        app:backgroundTint="@null"
         android:background="@drawable/button_boundary_background"
         android:text="@string/login"
         android:textAllCaps="false"
