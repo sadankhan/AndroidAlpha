@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Linear Gradient -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape>
+            <gradient
+                android:startColor="#4e54c8"
+                android:endColor="#8f94fb"
+                android:type="linear" />
+        </shape>
+    </item>
+</selector>
+
+<!--Radial Gradient-->
+<!--
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+<item>
+    <shape>
+        <gradient
+            android:gradientRadius="300dp"
+            android:endColor="#4e54c8"
+            android:startColor="#8f94fb"
+            android:type="radial" />
+    </shape>
+</item>
+</selector>
+-->
+<!--Sweep Gradient-->
+<!--
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape>
+            <gradient
+                android:endColor="#4e54c8"
+                android:startColor="#8f94fb"
+                android:type="sweep" />
+        </shape>
+    </item>
+</selector>
+-->

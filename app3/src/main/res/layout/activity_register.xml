@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/rlRegister"
-        android:background="@color/purple_200">
+        android:background="@drawable/gradient_background">
 
         <!--This is how you can include another layout
         inside a layout file. We might need toolbar again
