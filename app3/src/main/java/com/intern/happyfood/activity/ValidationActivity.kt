@@ -1,12 +1,11 @@
 package com.intern.happyfood.activity
 
-import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.intern.happyfood.R
 
@@ -35,7 +34,7 @@ class ValidationActivity : AppCompatActivity() {
         btnReset = findViewById(R.id.btnReset)
 
         /*Fetching the details from the intent*/
-        val details = intent.getBundleExtra("details")
+        intent.getBundleExtra("details")
 
 
         btnReset.setOnClickListener {

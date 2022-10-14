@@ -40,13 +40,14 @@ class RegisterActivity : AppCompatActivity() {
         btnRegister = findViewById(R.id.btnRegister)
 
         btnRegister.setOnClickListener {
-            val intent = Intent(this@RegisterActivity, MainActivity::class.java)
+            val intent = Intent(/* packageContext = */ this@RegisterActivity, /* cls = */
+                MainActivity::class.java)
             val bundle = Bundle()
             bundle.putString("data", "register")
-            bundle.putString("name", etName.text.toString())
-            bundle.putString("mobile", etPhoneNumber.text.toString())
-            bundle.putString("password", etPassword.text.toString())
-            bundle.putString("address", etAddress.text.toString())
+            bundle.putString(/* key = */ "name", /* value = */ etName.text.toString())
+            bundle.putString(/* key = */ "mobile", /* value = */ etPhoneNumber.text.toString())
+            bundle.putString(/* key = */ "password", /* value = */ etPassword.text.toString())
+            bundle.putString(/* key = */ "address", /* value = */ etAddress.text.toString())
             intent.putExtra("details", bundle)
             startActivity(intent)
         }

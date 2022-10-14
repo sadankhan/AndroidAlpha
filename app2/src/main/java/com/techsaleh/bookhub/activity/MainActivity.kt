@@ -134,9 +134,8 @@ class MainActivity : AppCompatActivity() {
 
 
     override fun onBackPressed() {
-        val frag = supportFragmentManager.findFragmentById(R.id.frame)
 
-        when(frag){
+        when(supportFragmentManager.findFragmentById(R.id.frame)){
             !is DashboardFragment -> openDashboard()
 
             else -> super.onBackPressed()

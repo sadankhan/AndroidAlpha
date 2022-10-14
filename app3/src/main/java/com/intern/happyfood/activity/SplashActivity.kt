@@ -1,11 +1,14 @@
 package com.intern.happyfood.activity
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import com.intern.happyfood.R
 
+@Suppress("DEPRECATION")
+@SuppressLint("CustomSplashScreen")
 class SplashActivity : AppCompatActivity() {
 
     /*Life-cycle method of the activity*/

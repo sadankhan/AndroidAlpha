@@ -3,12 +3,11 @@ package com.intern.happyfood.activity
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.intern.happyfood.R
 
 class LoginActivity : AppCompatActivity() {
@@ -18,7 +17,7 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var etMobileNumber: EditText
     private lateinit var etPassword: EditText
     private lateinit var txtForgotPassword: TextView
-    lateinit var sharedPreferences: SharedPreferences
+    private lateinit var sharedPreferences: SharedPreferences
 
     /*Life-cycle method of the activity*/
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -80,7 +79,7 @@ class LoginActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
-    fun savePreferences() {
+    private fun savePreferences() {
         sharedPreferences.edit().putBoolean("isLoggedIn", true).apply()
     }
 }

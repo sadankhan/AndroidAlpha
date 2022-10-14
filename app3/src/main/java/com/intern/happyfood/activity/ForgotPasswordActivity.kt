@@ -38,7 +38,8 @@ class ForgotPasswordActivity : AppCompatActivity() {
         btnForgotNext.setOnClickListener {
 
             /*Declaring the intent which sets up the route for the navigation of the activity*/
-            val intent = Intent(this@ForgotPasswordActivity, ValidationActivity::class.java)
+            val intent = Intent(/* packageContext = */ this@ForgotPasswordActivity, /* cls = */
+                ValidationActivity::class.java)
 
             /*Starting the new activity by sending the intent in the startActivity method*/
             startActivity(intent)
