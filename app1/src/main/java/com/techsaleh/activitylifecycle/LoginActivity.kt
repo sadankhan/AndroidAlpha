@@ -14,15 +14,15 @@ class LoginActivity : AppCompatActivity() {
     /* An activity is a screen on your devices, which consist of the user interface. */
     /* An activity provides the window in which the app draws its UI */
 
-    lateinit var etMobileNumber: EditText
-    lateinit var etPassword: EditText
-    lateinit var btnLogin: Button
-    lateinit var txtForgotPassword: TextView
-    lateinit var txtRegisterYourself: TextView
-    val validMobileNumber = "9876543210"
+    private lateinit var etMobileNumber: EditText
+    private lateinit var etPassword: EditText
+    private lateinit var btnLogin: Button
+    private lateinit var txtForgotPassword: TextView
+    private lateinit var txtRegisterYourself: TextView
+    private val validMobileNumber = "9876543210"
     private val validPassword = arrayOf("tony", "steve", "bruce", "thor", "thanos")
 
-    lateinit var sharedPreferences: SharedPreferences
+    private lateinit var sharedPreferences: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,7 +53,7 @@ class LoginActivity : AppCompatActivity() {
 
             val password = etPassword.text.toString()
 
-            var nameOfAvenger = "Avenger"
+            val nameOfAvenger: String
 
             val intent = Intent(this@LoginActivity, AvengersActivity::class.java)
 
@@ -136,7 +136,7 @@ class LoginActivity : AppCompatActivity() {
         println("On Pause Activity")
     }
 
-    fun savePreferences(title: String) {
+    private fun savePreferences(title: String) {
         sharedPreferences.edit().putBoolean("isLoggedIn", true).apply()
         sharedPreferences.edit().putString("title", title).apply()
     }

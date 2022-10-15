@@ -10,7 +10,7 @@
         android:id="@+id/imgLogo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Android Training"
+        android:text="@string/android_training"
         android:textSize="30sp"
         android:textStyle="bold"
         android:gravity="center"
@@ -28,7 +28,8 @@
         android:inputType="phone"
         android:maxLength="10"
         android:maxLines="1"
-        android:padding="6dp" />
+        android:padding="6dp"
+        android:autofillHints="Mobile Number" />
 
     <EditText
         android:id="@+id/etPassword"
@@ -39,6 +40,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginRight="15dp"
         android:hint="@string/enter_password"
+        android:autofillHints="password"
         android:inputType="textPassword"
         android:maxLines="1" />
 

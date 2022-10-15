@@ -10,7 +10,8 @@
             android:layout_height="150dp"
             android:layout_margin="20dp"
             android:src="@drawable/tony_stark_small"
-            android:layout_gravity="center_horizontal"/>
+            android:layout_gravity="center_horizontal"
+            android:contentDescription="@string/tonysimage" />
 
     <TextView
             android:layout_width="wrap_content"
@@ -42,6 +43,5 @@
             android:padding="10dp"
             android:textColor="#004d40"
             android:layout_gravity="center_horizontal"/>
-
 
 </LinearLayout>

@@ -6,8 +6,8 @@ import android.widget.TextView
 
 class MessageActivity : AppCompatActivity() {
 
-    lateinit var txtMessage: TextView
-    var message = "Custom Message"
+    private lateinit var txtMessage: TextView
+    private var message = "Custom Message"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_message)
@@ -15,7 +15,7 @@ class MessageActivity : AppCompatActivity() {
         txtMessage = findViewById(R.id.txtMessage)
 
         if (intent != null) {
-            message = intent.getStringExtra("Message")
+            message = intent.getStringExtra("Message").toString()
             txtMessage.text = message
         }
     }

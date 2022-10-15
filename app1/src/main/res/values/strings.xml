@@ -12,5 +12,11 @@
     <string name="log_out">Log out</string>
     <!--Saving the preferences-->
     <string name="preference_file_name">Avengers Preferences</string>
+    <string name="send_message">Send Message</string>
+    <string name="tonysimage">TonysImage</string>
+    <string name="android_training">Android Training</string>
+    <string name="i_am_learning_android_from_internshala">I am learning android from Internshala</string>
+    <string name="android_is_fun">Android is fun</string>
+    <string name="hello_android">Hello Android</string>
 
 </resources>
