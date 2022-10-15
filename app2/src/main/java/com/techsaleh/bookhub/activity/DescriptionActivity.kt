@@ -252,6 +252,7 @@ class DescriptionActivity : AppCompatActivity() {
 
         val db = Room.databaseBuilder(context, BookDatabase::class.java, "books-db").build()
 
+        @Deprecated("Deprecated in Java")
         override fun doInBackground(vararg p0: Void?): Boolean {
 
             when (mode) {
@@ -259,7 +260,7 @@ class DescriptionActivity : AppCompatActivity() {
                 1 -> {
 
                     // Check DB if the book is favourite or not
-                    val book: BookEntity? = db.bookDao().getBookById(bookEntity.book_id.toString())
+                    val book: BookEntity = db.bookDao().getBookById(bookEntity.book_id.toString())
                     db.close()
                     return book != null
 

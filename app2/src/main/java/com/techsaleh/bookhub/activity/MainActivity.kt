@@ -16,6 +16,7 @@ import com.techsaleh.bookhub.fragment.DashboardFragment
 import com.techsaleh.bookhub.fragment.FavouritesFragment
 import com.techsaleh.bookhub.fragment.ProfileFragment
 
+@Suppress("DEPRECATION")
 class MainActivity : AppCompatActivity() {
 
     private lateinit var drawerLayout: DrawerLayout
@@ -133,6 +134,7 @@ class MainActivity : AppCompatActivity() {
     }
 
 
+    @Deprecated("Deprecated in Java")
     override fun onBackPressed() {
 
         when(supportFragmentManager.findFragmentById(R.id.frame)){
