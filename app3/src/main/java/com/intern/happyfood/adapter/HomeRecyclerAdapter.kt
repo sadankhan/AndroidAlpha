@@ -5,7 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.intern.happyfood.R
 import com.intern.happyfood.model.Restaurant
@@ -26,6 +28,12 @@ class HomeRecyclerAdapter(val context: Context, private val itemList: ArrayList<
         holder.textResRating.text = restaurant.resRating
         holder.textAvgCost.text = restaurant.avgCost
         holder.imgResImage.setBackgroundResource(restaurant.resImage)
+
+        holder.llContent.setOnClickListener {
+            Toast.makeText(context,
+                "Clicked on ${holder.textResName.text}",
+                Toast.LENGTH_SHORT).show()
+        }
     }
 
     override fun getItemCount(): Int {
@@ -37,5 +45,7 @@ class HomeRecyclerAdapter(val context: Context, private val itemList: ArrayList<
         val textResRating: TextView = view.findViewById(R.id.txtResRating)
         val textAvgCost: TextView = view.findViewById(R.id.txtCostForOne)
         val imgResImage: ImageView = view.findViewById(R.id.imgResImage)
+
+        val llContent: LinearLayout = view.findViewById(R.id.llContent)
     }
 }
