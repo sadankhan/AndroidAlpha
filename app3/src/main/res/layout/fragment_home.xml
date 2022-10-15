@@ -24,4 +24,16 @@
         android:padding="10dp"
         android:layout_margin="5dp"/>
 
+    <!--Check the internet connection-->
+    <Button
+        android:id="@+id/btnCheckInternet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/color_logo"
+        android:text="@string/check_internet"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="#ffffff"/>
+
 </RelativeLayout>
