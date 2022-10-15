@@ -45,4 +45,7 @@
     <string name="frequently_asked_questions">Frequently Asked Questions</string>
     <string name="name_of_the_restaurant">Name of the restaurant</string>
     <string name="list_item">List Item</string>
+    <string name="dish_images">Dish Images</string>
+    <string name="rs_300_person">Rs. 300/person</string>
+    <string name="_4_5">4.5</string>
 </resources>

@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.intern.happyfood.R
 import com.intern.happyfood.adapter.HomeRecyclerAdapter
+import com.intern.happyfood.model.Restaurant
 
 
 class HomeFragment : Fragment() {
@@ -17,22 +18,33 @@ class HomeFragment : Fragment() {
 
     lateinit var layoutManager: RecyclerView.LayoutManager
 
-    val restaurantList = arrayListOf(
-        "Pizza Hut",
-        "Dominos",
-        "Mirch Masala",
-        "Zayka",
-        "Kalika",
-        "KFC",
-        "Reliance",
-        "Nokia",
-        "Amazon",
-        "Respy",
-        "Zomato",
-        "Online Kaka"
-    )
-
     lateinit var recyclerAdapter: HomeRecyclerAdapter
+
+    val resInfoList = arrayListOf<Restaurant>(
+        Restaurant("KFC", "5.0", "300/person", R.drawable.ic_launcher_background),
+        Restaurant("KFC", "5.0", "300/person", R.drawable.ic_launcher_background),
+        Restaurant("KFC", "5.0", "300/person", R.drawable.ic_launcher_background),
+        Restaurant("KFC", "5.0", "300/person", R.drawable.ic_launcher_background),
+        Restaurant("KFC", "5.0", "300/person", R.drawable.ic_launcher_background),
+        Restaurant("KFC", "5.0", "300/person", R.drawable.ic_launcher_background),
+        Restaurant("KFC", "5.0", "300/person", R.drawable.ic_launcher_background),
+        Restaurant("KFC", "5.0", "300/person", R.drawable.ic_launcher_background),
+        Restaurant("KFC", "5.0", "300/person", R.drawable.ic_launcher_background),
+        Restaurant("KFC", "5.0", "300/person", R.drawable.ic_launcher_background),
+        Restaurant("KFC", "5.0", "300/person", R.drawable.ic_launcher_background),
+        Restaurant("KFC", "5.0", "300/person", R.drawable.ic_launcher_background),
+        Restaurant("KFC", "5.0", "300/person", R.drawable.ic_launcher_background),
+        Restaurant("KFC", "5.0", "300/person", R.drawable.ic_launcher_background),
+        Restaurant("KFC", "5.0", "300/person", R.drawable.ic_launcher_background),
+        Restaurant("KFC", "5.0", "300/person", R.drawable.ic_launcher_background),
+        Restaurant("KFC", "5.0", "300/person", R.drawable.ic_launcher_background),
+        Restaurant("KFC", "5.0", "300/person", R.drawable.ic_launcher_background),
+        Restaurant("KFC", "5.0", "300/person", R.drawable.ic_launcher_background),
+        Restaurant("KFC", "5.0", "300/person", R.drawable.ic_launcher_background),
+        Restaurant("KFC", "5.0", "300/person", R.drawable.ic_launcher_background),
+        Restaurant("KFC", "5.0", "300/person", R.drawable.ic_launcher_background),
+        Restaurant("KFC", "5.0", "300/person", R.drawable.ic_launcher_background),
+    ) //Send this list to the Adapter Class
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -45,7 +57,7 @@ class HomeFragment : Fragment() {
         //For the activity it will be this, and here as activity
         layoutManager = LinearLayoutManager(activity)
 
-        recyclerAdapter = HomeRecyclerAdapter(activity as Context, restaurantList)
+        recyclerAdapter = HomeRecyclerAdapter(activity as Context, resInfoList)
 
         recyclerHome.adapter = recyclerAdapter
         recyclerHome.layoutManager = layoutManager
