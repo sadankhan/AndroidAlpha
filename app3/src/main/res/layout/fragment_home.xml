@@ -14,4 +14,13 @@
         android:textSize="20sp"
         android:padding="10dp"/>
 
+    <!-- Step 1 for creating RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerHome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtHome"
+        android:padding="10dp"
+        android:layout_margin="5dp"/>
+
 </RelativeLayout>
