@@ -11,7 +11,8 @@
         android:layout_height="180dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
-        android:src="@drawable/profile_pic_android" />
+        android:src="@drawable/profile_pic_android"
+        android:contentDescription="imgProfile" />
 
     <TextView
         android:id="@+id/txtName"

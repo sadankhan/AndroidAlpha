@@ -9,6 +9,7 @@ import android.widget.RelativeLayout
 import androidx.appcompat.widget.Toolbar
 import com.intern.happyfood.R
 
+@Suppress("DEPRECATION")
 class RegisterActivity : AppCompatActivity() {
     private lateinit var toolbar: Toolbar
     private lateinit var btnRegister: Button

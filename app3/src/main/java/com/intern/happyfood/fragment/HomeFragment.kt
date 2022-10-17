@@ -55,11 +55,11 @@ class HomeFragment : Fragment() {
                 dialog.setTitle("Success!")
                 dialog.setMessage("Internet Connection Found!")
                 dialog.setPositiveButton("OK"){
-                    text, listener ->
+                        _, _ ->
                     //Do Nothing
                 }
                 dialog.setNegativeButton("Cancel") {
-                    text, listener ->
+                        _, _ ->
                 }
                 dialog.create()
                 dialog.show()
@@ -69,11 +69,11 @@ class HomeFragment : Fragment() {
                 dialog.setTitle("Error!")
                 dialog.setMessage("No Internet Connection!")
                 dialog.setPositiveButton("OK"){
-                        text, listener ->
+                        _, _ ->
                     //Do Nothing
                 }
                 dialog.setNegativeButton("Cancel") {
-                        text, listener ->
+                        _, _ ->
                 }
                 dialog.create()
                 dialog.show()

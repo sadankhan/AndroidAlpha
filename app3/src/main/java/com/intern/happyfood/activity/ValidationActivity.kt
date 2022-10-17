@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.intern.happyfood.R
 
+@Suppress("DEPRECATION")
 class ValidationActivity : AppCompatActivity() {
     private lateinit var toolbar: Toolbar
     private lateinit var btnReset: Button
