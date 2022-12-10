@@ -1,5 +1,8 @@
+@file:Suppress("DEPRECATION")
+
 package com.techsaleh.bookhub.activity
 
+import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
@@ -13,7 +16,6 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.room.Room
-import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
@@ -33,10 +35,10 @@ class DescriptionActivity : AppCompatActivity() {
     lateinit var imgBookImage: ImageView
     lateinit var txtBookDesc: TextView
     lateinit var btnAddToFav: Button
-    lateinit var progressBar: ProgressBar
+    private lateinit var progressBar: ProgressBar
     lateinit var progressLayout: RelativeLayout
 
-    lateinit var toolbar: Toolbar
+    private lateinit var toolbar: Toolbar
 
     var bookId: String? = "100"
 
@@ -89,7 +91,7 @@ class DescriptionActivity : AppCompatActivity() {
 
         if (ConnectionManager().checkConnectivity(this@DescriptionActivity)) {
             val jsonRequest =
-                    object : JsonObjectRequest(Request.Method.POST, url, jsonParams, Response.Listener {
+                    object : JsonObjectRequest(Method.POST, url, jsonParams, Response.Listener {
 
                         try {
 
@@ -121,14 +123,14 @@ class DescriptionActivity : AppCompatActivity() {
                                 val isFav = checkFav.get()
 
                                 if (isFav) {
-                                    btnAddToFav.text = "Remove from Favourites"
+                                    btnAddToFav.text = getString(R.string.remove_from_favourites)
                                     val favColor = ContextCompat.getColor(
                                             applicationContext,
                                             R.color.colorFavourite
                                     )
                                     btnAddToFav.setBackgroundColor(favColor)
                                 } else {
-                                    btnAddToFav.text = "Add to Favourites"
+                                    btnAddToFav.text = getString(R.string.add_to_favourites)
                                     val noFavColor =
                                             ContextCompat.getColor(applicationContext, R.color.colorPrimary)
                                     btnAddToFav.setBackgroundColor(noFavColor)
@@ -153,7 +155,7 @@ class DescriptionActivity : AppCompatActivity() {
                                                     Toast.LENGTH_SHORT
                                             ).show()
 
-                                            btnAddToFav.text = "Remove from favourites"
+                                            btnAddToFav.text = getString(R.string.remove_from_favourites)
                                             val favColor = ContextCompat.getColor(applicationContext, R.color.colorFavourite)
                                             btnAddToFav.setBackgroundColor(favColor)
                                         } else {
@@ -175,7 +177,7 @@ class DescriptionActivity : AppCompatActivity() {
                                                     Toast.LENGTH_SHORT
                                             ).show()
 
-                                            btnAddToFav.text = "Add to favourites"
+                                            btnAddToFav.text = getString(R.string.add_to_favourites)
                                             val noFavColor =
                                                     ContextCompat.getColor(applicationContext, R.color.colorPrimary)
                                             btnAddToFav.setBackgroundColor(noFavColor)
@@ -186,7 +188,6 @@ class DescriptionActivity : AppCompatActivity() {
                                                     Toast.LENGTH_SHORT
                                             ).show()
                                         }
-
                                     }
                                 }
 
@@ -225,13 +226,13 @@ class DescriptionActivity : AppCompatActivity() {
             val dialog = AlertDialog.Builder(this@DescriptionActivity)
             dialog.setTitle("Error")
             dialog.setMessage("Internet Connection is not Found")
-            dialog.setPositiveButton("Open Settings") { text, listener ->
+            dialog.setPositiveButton("Open Settings") { _, _ ->
                 val settingsIntent = Intent(Settings.ACTION_WIRELESS_SETTINGS)
                 startActivity(settingsIntent)
                 finish()
             }
 
-            dialog.setNegativeButton("Exit") { text, listener ->
+            dialog.setNegativeButton("Exit") { _, _ ->
                 ActivityCompat.finishAffinity(this@DescriptionActivity)
             }
             dialog.create()
@@ -241,7 +242,7 @@ class DescriptionActivity : AppCompatActivity() {
     }
 
 
-    class DBAsyncTask(val context: Context, val bookEntity: BookEntity, val mode: Int) :
+    class DBAsyncTask(@SuppressLint("StaticFieldLeak") val context: Context, private val bookEntity: BookEntity, private val mode: Int) :
             AsyncTask<Void, Void, Boolean>() {
 
         /*
@@ -250,7 +251,7 @@ class DescriptionActivity : AppCompatActivity() {
         Mode 3 -> Remove the favourite book
         * */
 
-        val db = Room.databaseBuilder(context, BookDatabase::class.java, "books-db").build()
+        private val db = Room.databaseBuilder(context, BookDatabase::class.java, "books-db").build()
 
         @Deprecated("Deprecated in Java")
         override fun doInBackground(vararg p0: Void?): Boolean {
@@ -260,9 +261,9 @@ class DescriptionActivity : AppCompatActivity() {
                 1 -> {
 
                     // Check DB if the book is favourite or not
-                    val book: BookEntity = db.bookDao().getBookById(bookEntity.book_id.toString())
+                    db.bookDao().getBookById(bookEntity.book_id.toString())
                     db.close()
-                    return book != null
+                    return true
 
                 }
 
