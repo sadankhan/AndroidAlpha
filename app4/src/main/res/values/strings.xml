@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Android OCR</string>
+    <string name="result">Result</string>
+    <string name="add_image">Add Image</string>
+    <string name="about">About</string>
+    <string name="image_preview">Image Preview</string>
+    <string name="scanned_text">Scanned Text</string>
+    <string name="imageiv">ImageIv</string>
+    <string name="database_this_information">Database this Info.</string>
 </resources>
